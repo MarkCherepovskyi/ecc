@@ -55,7 +55,7 @@ func TestScalar_WrongInput(t *testing.T) {
 
 		switch group.group {
 		// The following is arbitrary, and simply aims at confusing identifiers
-		case ecc.Ristretto255Sha512, ecc.Edwards25519Sha512, ecc.Secp256k1Sha256:
+		case ecc.Ristretto255Sha512, ecc.Edwards25519Sha512, ecc.Secp256k1Sha256, ecc.PallasSha256:
 			wrongGroup = ecc.P256Sha256
 		case ecc.P256Sha256, ecc.P384Sha384, ecc.P521Sha512:
 			wrongGroup = ecc.Ristretto255Sha512

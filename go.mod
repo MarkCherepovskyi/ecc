@@ -15,3 +15,8 @@ require (
 	golang.org/x/crypto v0.38.0 // indirect
 	golang.org/x/sys v0.33.0 // indirect
 )
+
+replace (
+	github.com/bytemare/hash v0.5.2 => github.com/MarkCherepovskyi/hash v0.0.0-20260203153423-018996cc7c5e
+
+)

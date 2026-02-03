@@ -43,7 +43,7 @@ func TestNonAvailability(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	oob = ecc.Secp256k1Sha256 + 1
+	oob = ecc.PallasSha256 + 1
 	if oob.Available() {
 		t.Errorf(consideredAvailableFmt, oob)
 	}
@@ -80,6 +80,7 @@ func TestDST(t *testing.T) {
 		ecc.P521Sha512:         app + "-V01-CS05-",
 		ecc.Edwards25519Sha512: app + "-V01-CS06-",
 		ecc.Secp256k1Sha256:    app + "-V01-CS07-",
+		ecc.PallasSha256:       app + "-V01-CS08-",
 	}
 
 	testAllGroups(t, func(group *testGroup) {

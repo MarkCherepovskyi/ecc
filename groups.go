@@ -21,6 +21,7 @@ import (
 	"github.com/bytemare/ecc/internal"
 	"github.com/bytemare/ecc/internal/edwards25519"
 	"github.com/bytemare/ecc/internal/nist"
+	"github.com/bytemare/ecc/internal/pallas"
 	"github.com/bytemare/ecc/internal/ristretto"
 	"github.com/bytemare/ecc/internal/secp256k1"
 )
@@ -49,6 +50,9 @@ const (
 
 	// Secp256k1Sha256 identifies the SECp256k1 group with SHA2-256 hash-to-group hashing.
 	Secp256k1Sha256
+
+	// PallasSha256 identifies the Pallas group with SHA2-256 hash-to-group hashing.
+	PallasBLAKE2b512
 
 	maxID
 
@@ -172,6 +176,8 @@ func (g Group) init() {
 		g.initGroup(edwards25519.New)
 	case Secp256k1Sha256:
 		g.initGroup(secp256k1.New)
+	case PallasBLAKE2b512:
+		g.initGroup(pallas.New)
 	default:
 		panic("group not recognized")
 	}

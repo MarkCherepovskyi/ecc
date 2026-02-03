@@ -107,7 +107,7 @@ func TestElement_WrongInput(t *testing.T) {
 		// The following is arbitrary, and simply aims at confusing identifiers
 		case ecc.Ristretto255Sha512, ecc.Edwards25519Sha512:
 			alternativeGroup = ecc.P256Sha256
-		case ecc.P256Sha256, ecc.P384Sha384, ecc.P521Sha512, ecc.Secp256k1Sha256:
+		case ecc.P256Sha256, ecc.P384Sha384, ecc.P521Sha512, ecc.Secp256k1Sha256, ecc.PallasSha256:
 			alternativeGroup = ecc.Ristretto255Sha512
 		default:
 			t.Fatalf("Invalid group id %d", group.group)
